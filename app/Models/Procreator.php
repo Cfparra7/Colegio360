@@ -8,14 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Procreator extends Model
 {
     use HasFactory;
-    protected $table = 'Procreator';
-    protected $primaryKey = 'IdProcreator';
+    protected $table = 'procreator';
+    protected $primaryKey = 'idProcreator';
     protected $fillable = [
-        'IdUser',
-        'Telefono'
+        'idUser',
+        'phone'
     ];
     public function user()
     {
-        return $this->belongsTo(User::class, 'IdUser');
+        return $this->belongsTo(User::class, 'idUser');
     }
 }

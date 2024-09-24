@@ -10,10 +10,11 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
-    protected $primaryKey = 'IdUser';
+    protected $table = 'users';
+    protected $primaryKey = 'idUser';
     protected $fillable = [
-        'Nombre',
-        'Apellido',
+        'firstName',
+        'lastName',
         'email',
         'password',
         'IdRole'

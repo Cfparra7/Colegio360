@@ -5,19 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Note extends Model
+class Grade extends Model
 {
     use HasFactory;
     // Especifica el nombre de la tabla si no sigue la convención plural
-    protected $table = 'Note';
-    protected $primaryKey = 'IdNota';
+    protected $table = 'grade';
+    protected $primaryKey = 'idGrade';
     public $timestamps = false;
 
     protected $fillable = [
-        'IdStudent',
-        'IdAssignment',
-        'Note',
-        'FechaRegistro'
+        'idStudent',
+        'idAssignment',
+        'grade',
+        'recordDate'
     ];
 
     // Relación con el modelo estudiante

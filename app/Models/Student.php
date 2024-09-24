@@ -9,14 +9,14 @@ class Student extends Model
 {
     use HasFactory;
 
-    protected $table = 'Student';
-    protected $primaryKey = 'IdStudent';
+    protected $table = 'student';
+    protected $primaryKey = 'idStudent';
     protected $fillable = [
-        'IdUser',
-        'FechaNacimiento',
+        'idUser',
+        'birthDate',
     ];
     public function user()
     {
-        return $this->belongsTo(User::class, 'IdUser');
+        return $this->belongsTo(User::class, 'idUser');
     }
 }

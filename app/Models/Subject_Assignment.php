@@ -5,38 +5,38 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SubjectAssignment extends Model
+class Subject_Assignment extends Model
 {
     use HasFactory;
 
     // Especifica el nombre de la tabla si no sigue la convención plural
-    protected $table = 'SubjectAssignment';
+    protected $table = 'subject_assignment';
 
-    protected $primaryKey = 'IdSubjectAssignment';
+    protected $primaryKey = 'idAssignment';
 
     public $timestamps = false;
 
     protected $fillable = [
-        'IdSubject',
-        'IdCourse',
-        'IdTeacher'
+        'idSubject',
+        'idCourse',
+        'idTeacher'
     ];
 
     // Relación con el modelo de Materias
     public function subject()
     {
-        return $this->belongsTo(Subject::class, 'IdSubject');
+        return $this->belongsTo(Subject::class, 'idSubject');
     }
 
     // Relación con el modelo de cursos
     public function course()
     {
-        return $this->belongsTo(Course::class, 'IdCourse');
+        return $this->belongsTo(Course::class, 'idCourse');
     }
 
     // Relación con el modelo de profesores
     public function teacher()
     {
-        return $this->belongsTo(Teacher::class, 'IdTeacher');
+        return $this->belongsTo(Teacher::class, 'idTeacher');
     }
 }
